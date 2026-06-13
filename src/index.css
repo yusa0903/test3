@@ -1,0 +1,356 @@
+/* ===== リセット & ベース ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Noto Sans JP', sans-serif;
+  background-color: #f0f4f8;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ===== 認証画面（ログイン・登録）共通 ===== */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.auth-logo {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.auth-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #4a5568;
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #718096;
+  margin-bottom: 1.75rem;
+}
+
+/* ===== フォーム ===== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.form-group input::placeholder {
+  color: #a0aec0;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== メッセージ ===== */
+.error-message {
+  background: #fff5f5;
+  color: #c53030;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background: #f0fff4;
+  color: #276749;
+  border: 1px solid #c6f6d5;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.auth-link a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===== ローディング ===== */
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+/* ===== 物件一覧画面 ===== */
+.properties-container {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+.properties-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-logo {
+  font-size: 1.8rem;
+}
+
+.properties-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.logout-btn {
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.properties-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.properties-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.properties-title-row h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.property-count {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* ===== 物件カードグリッド ===== */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.property-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.property-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.property-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.4;
+}
+
+/* 空室・入居中バッジ */
+.property-status {
+  flex-shrink: 0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.property-status.vacant {
+  background: #ebf8ff;
+  color: #2b6cb0;
+}
+
+.property-status.occupied {
+  background: #f0fff4;
+  color: #276749;
+}
+
+/* 家賃表示 */
+.property-rent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.rent-unit {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #a0aec0;
+}
+
+/* 物件詳細（エリア・間取り・階数） */
+.property-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.property-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+}
+
+.detail-label {
+  color: #718096;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 600px) {
+  .properties-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .properties-header h1 {
+    font-size: 1rem;
+  }
+
+  .user-email {
+    display: none;
+  }
+
+  .properties-main {
+    padding: 1.25rem 1rem;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+}

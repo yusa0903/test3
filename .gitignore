@@ -1,0 +1,23 @@
+# 依存パッケージ
+node_modules
+
+# ビルド成果物
+dist
+
+# 環境変数（認証情報を含むため必ずgit管理から除外）
+.env
+.env.local
+.env.*.local
+
+# ログ
+logs
+*.log
+npm-debug.log*
+
+# エディタ
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
